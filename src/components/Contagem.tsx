@@ -22,9 +22,17 @@ export default function Contagem({ count, aumentar }: CountProps) {
     }, [])
 
     useEffect(() => {
-        console.log('Sou chamado quando o count é alterado');
-
+        if (count != 0) {
+            console.log('Sou chamado quando o count é alterado');
+        }
     }, [count])
+
+    useEffect(() => {
+        return () => {
+            console.log('ops..Me desmontaram');
+        }
+    }, [])
+
 
     return (
         <div>

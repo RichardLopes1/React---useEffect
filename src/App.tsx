@@ -6,6 +6,7 @@ import Contagem from './components/Contagem'
 function App() {
 
   const [count, setCount] = useState(0)
+  const [contagem, setContagem] = useState(true)
 
   function aumentar() {
     setCount(count + 1)
@@ -15,7 +16,10 @@ function App() {
   return (
     <>
       <h1>Reaact- Hooks - usEffect</h1>
-      <Contagem count={count} aumentar={aumentar} />
+      <button onClick={() => setContagem(!contagem)}>
+        Criar contagem</button>
+      {contagem ? <Contagem count={count} aumentar={aumentar} /> : ''}
+
     </>
   )
 }
